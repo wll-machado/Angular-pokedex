@@ -1,0 +1,84 @@
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/variables.scss";
+
+:host{
+    .pokemon__list{
+        position: absolute;
+        top: 150px;
+        height:400px;
+        width: 100%;
+        overflow: auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+
+        &::-webkit-scrollbar{
+            width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: red;
+            border-radius: 10px;
+          }
+        .pokemon{
+            position: relative;
+            top: 0;
+            display: flex;
+            width: 90%;
+            min-height: rem-calc(120);
+            background: var(--branco);
+            border-radius: rem-calc(10);
+            padding: rem-calc(20);
+            margin:0 5px 5px 5px;
+            cursor: pointer;
+            &__status{
+                h2{
+                    font-size: rem-calc(22);
+                    font-style: italic;
+                    font-weight: 700;
+                    margin-bottom: rem-calc(10);
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+
+                    li {
+                        background: var(--cinza);
+                        font-size: rem-calc(10);
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        width: rem-calc(60);
+                        border-radius: rem-calc(60);
+                        margin-bottom: rem-calc(5);
+                    }
+                }
+            }
+
+            .pokemon__image{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                bottom: rem-calc(5);
+                right: rem-calc(20);
+
+                img {
+                    width: 65px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+}
